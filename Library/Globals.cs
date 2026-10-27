@@ -552,6 +552,20 @@ namespace Library
             }
         }
 
+        /// <summary>稀有度文字颜色：凡兵白/精炼绿/稀世蓝/名器紫/神兵黄/天工红</summary>
+        public static Color GetRarityColour(Rarity rarity)
+        {
+            switch (rarity)
+            {
+                case Rarity.Superior: return Color.LimeGreen;
+                case Rarity.Elite: return Color.DeepSkyBlue;
+                case Rarity.Famous: return Color.Violet;
+                case Rarity.Divine: return Color.Yellow;
+                case Rarity.Heavenly: return Color.Red;
+                default: return Color.White;
+            }
+        }
+
 
         [IgnorePropertyPacket]
         public int Weight
