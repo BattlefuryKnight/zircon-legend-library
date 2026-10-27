@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -798,6 +798,7 @@ namespace Library
         Refine,
         Enhancement, //Temporary Buff!?
         Other,
+        Affix, //装备词条（暗黑风格词缀）
     }
 
     public enum StatType

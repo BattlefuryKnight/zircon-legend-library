@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -249,9 +249,12 @@ namespace Library
 
     public enum Rarity : byte
     {
-        [Description("普通物品")] Common,
-        [Description("高级物品")] Superior,
-        [Description("稀世物品")] Elite,
+        [Description("凡兵")] Common,
+        [Description("精炼")] Superior,
+        [Description("稀世")] Elite,
+        [Description("名器")] Famous,
+        [Description("神兵")] Divine,
+        [Description("天工")] Heavenly,
     }
 
     public enum LightSetting : byte

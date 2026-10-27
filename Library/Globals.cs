@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -527,6 +527,30 @@ namespace Library
 
         public UserItemFlags Flags { get; set; }
         public TimeSpan ExpireTime { get; set; }
+
+        /// <summary>词条命名（如"嗜血之屠龙刀"），空 = 使用原始名称</summary>
+        public string AffixName { get; set; }
+
+        /// <summary>词条文本列表（模板已代入随机数值）</summary>
+        public List<string> AffixTexts { get; set; }
+
+        /// <summary>词条贡献的属性（客户端用于从基础属性展示中排除）</summary>
+        public Stats AffixStats { get; set; }
+
+        /// <summary>实例稀有度（掉落时 roll）：0=未设置（旧数据用模板），1~3=实际稀有度</summary>
+        public byte CustomRarity { get; set; }
+
+        /// <summary>物品实际稀有度（实例已设置用实例值，否则回退模板）</summary>
+        [IgnorePropertyPacket]
+        public Rarity Rarity
+        {
+            get
+            {
+                if (CustomRarity > 0) return (Rarity)(CustomRarity - 1);
+
+                return Info == null ? Rarity.Common : Info.Rarity;
+            }
+        }
 
 
         [IgnorePropertyPacket]
@@ -1207,5 +1231,3 @@ namespace Library
         public int yPos { get; set; }
     }
 }
-
-
