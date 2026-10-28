@@ -543,6 +543,13 @@ namespace Library.Network.ServerPackets
         public Element Element { get; set; }
     }
 
+    [PacketMark(2190)]
+    public sealed class ObjectAttacked : Packet
+    {
+        public uint ObjectID { get; set; }
+        public uint AttackerID { get; set; }
+    }
+
     [PacketMark(2056)]
     public sealed class ObjectDied : Packet
     {
