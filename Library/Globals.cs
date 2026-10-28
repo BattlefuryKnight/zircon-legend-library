@@ -534,6 +534,9 @@ namespace Library
         /// <summary>词条文本列表（模板已代入随机数值）</summary>
         public List<string> AffixTexts { get; set; }
 
+        /// <summary>词条品质百分比（0~100，与 AffixTexts 一一对应；100=无范围/满值，客户端按此着色）</summary>
+        public List<int> AffixRates { get; set; }
+
         /// <summary>词条贡献的属性（客户端用于从基础属性展示中排除）</summary>
         public Stats AffixStats { get; set; }
 
@@ -927,6 +930,7 @@ namespace Library
         public Stats Stats { get; set; }
         public bool Pause { get; set; }
         public int ItemIndex { get; set; }
+        public string BuffIcon { get; set; }
     }
 
     public class ClientRefineInfo

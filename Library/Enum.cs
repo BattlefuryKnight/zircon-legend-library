@@ -226,6 +226,7 @@ namespace Library
         FrostBite = 411,
 
         MagicWeakness = 500,
+        AffixTrigger = 600,
     }
 
     public enum RequiredType : byte

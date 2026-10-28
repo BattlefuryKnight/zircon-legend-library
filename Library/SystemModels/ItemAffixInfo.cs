@@ -17,6 +17,11 @@ namespace Library.SystemModels
         MagicPercentBelow,
         /// <summary>夜间生效（无需参数）</summary>
         NightTime,
+        OnAttackMonster,
+        OnAttackPlayer,
+        OnDamaged,
+        OnDeath,
+        OnRespawn,
     }
 
     /// <summary>
@@ -215,6 +220,42 @@ namespace Library.SystemModels
             }
         }
         private bool _Enabled = true;
+
+        /// <summary>
+        /// 生效持续时间（秒）：仅事件触发型词条使用，触发成功后 buff 持续时间；多次触发可累加。0 = 使用默认（5 秒）
+        /// </summary>
+        public int Duration
+        {
+            get { return _Duration; }
+            set
+            {
+                if (_Duration == value) return;
+
+                var oldValue = _Duration;
+                _Duration = value;
+
+                OnChanged(oldValue, value, "Duration");
+            }
+        }
+        private int _Duration;
+
+        /// <summary>
+        /// 触发型词条的 buff 图标文件名（客户端 buff 列表显示用）；空 = 使用客户端默认 buff 图标
+        /// </summary>
+        public string BuffIcon
+        {
+            get { return _BuffIcon; }
+            set
+            {
+                if (_BuffIcon == value) return;
+
+                var oldValue = _BuffIcon;
+                _BuffIcon = value;
+
+                OnChanged(oldValue, value, "BuffIcon");
+            }
+        }
+        private string _BuffIcon;
 
     }
 }
