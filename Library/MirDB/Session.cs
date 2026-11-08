@@ -252,6 +252,20 @@ namespace MirDB
             return path;
         }
 
+        public void ForceSaveSystemNow()
+        {
+            foreach (KeyValuePair<Type, ADBCollection> pair in Collections)
+            {
+                pair.Value.ResetSaveList();
+            }
+
+            Save(false);
+
+            SystemDataDirty = true;
+
+            SaveSystem();
+        }
+
         public void SaveSystem()
         {
             if ((Mode & SessionMode.System) != SessionMode.System) return;

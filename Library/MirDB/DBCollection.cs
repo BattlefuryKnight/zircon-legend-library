@@ -152,6 +152,12 @@ namespace MirDB
                 Session.SystemDataDirty = true;
         }
 
+
+        internal override void ResetSaveList()
+        {
+            SaveList = null;
+        }
+
         internal override byte[] GetSaveData()
         {
             using (MemoryStream mStream = new MemoryStream())

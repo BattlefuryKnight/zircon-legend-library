@@ -463,6 +463,7 @@ namespace Library.Network.ClientPackets
         public int Index { get; set; }
         public long Count { get; set; }
         public bool UseHuntGold { get; set; }
+        public bool UseGold { get; set; }
     }
 
     [PacketMark(1063)]

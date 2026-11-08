@@ -19,6 +19,7 @@ namespace MirDB
 
         internal abstract void Load(byte[] data, DBMapping mapping);
         internal abstract void SaveObjects();
+        internal abstract void ResetSaveList();
         internal abstract byte[] GetSaveData();
         internal abstract void Delete(DBObject ob);
 

@@ -53,6 +53,21 @@ namespace Library.SystemModels
             }
         }
         private int _HuntGoldPrice;
+
+        public int GoldPrice
+        {
+            get => _GoldPrice;
+            set
+            {
+                if (_GoldPrice == value) return;
+
+                int oldValue = _GoldPrice;
+                _GoldPrice = value;
+
+                OnChanged(oldValue, value, "GoldPrice");
+            }
+        }
+        private int _GoldPrice;
         
         public string Filter
         {
