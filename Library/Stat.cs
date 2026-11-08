@@ -779,6 +779,14 @@ namespace Library
         [StatDescription(Title = "宠物生命", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)] PetHPPercent = 10004, // 0x00002714
         [StatDescription(Title = "减免伤害", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)] DamageReduction = 10005, // 0x00002715
         [StatDescription(Title = "附加伤害", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)] DamageAdd = 10006, // 0x00002716
+        [StatDescription(Title = "魔法恢复量", Format = "{0:+#0;-#0;#0}%", Mode = StatType.Default)]
+        ManaRecovery = 10017,
+
+        [StatDescription(Title = "魔法恢复速度", Format = "{0:+#0;-#0;#0}%", Mode = StatType.Default)]
+        ManaRecoverySpeed = 10018,
+
+        [StatDescription(Title = "移动速度", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)]
+        MoveSpeed = 10019,
         //[StatDescription(Title = "蕴灵等级", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)] Yunling = 10007, // 0x00002717
         //[StatDescription(Title = "灵气值", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)] 灵气值 = 10008, // 0x00002718
         //[StatDescription(Title = "红毒", Format = "{0:+#0%;-#0%;#0%}概率使目标中红毒10秒.", Mode = StatType.Percent)] RedPoisonAdd = 10009, // 0x00002719

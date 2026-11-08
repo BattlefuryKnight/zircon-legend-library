@@ -384,6 +384,10 @@ namespace Library
                          ASpeedRate = 47,
                          ProjectileSpeed = 48;
 
+        // 移动速度：每点 MoveSpeed 减少的步进毫秒数；步进时间下限
+        public const int MoveSpeedRate = 15,
+                         MinMoveTime = 200;
+
         public static TimeSpan TurnTime = TimeSpan.FromMilliseconds(300),
                                HarvestTime = TimeSpan.FromMilliseconds(600),
                                MoveTime = TimeSpan.FromMilliseconds(600),

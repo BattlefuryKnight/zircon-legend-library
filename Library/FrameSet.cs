@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Library
@@ -1003,12 +1003,15 @@ namespace Library
             for (int i = 0; i < Delays.Length; i++)
                 Delays[i] = frame.Delays[i];
         }
-        public int GetFrame(DateTime start, DateTime now, bool doubleSpeed)
+        public int GetFrame(DateTime start, DateTime now, bool doubleSpeed, double speedFactor = 1.0)
         {
             TimeSpan enlapsed = now - start;
 
             if (doubleSpeed && !StaticSpeed)
                 enlapsed += enlapsed;
+            if (speedFactor > 0 && speedFactor != 1.0)
+                enlapsed = TimeSpan.FromTicks((long)(enlapsed.Ticks * speedFactor));
+
 
 
             if (Reversed)

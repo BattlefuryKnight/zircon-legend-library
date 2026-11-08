@@ -1,4 +1,4 @@
-﻿using MirDB;
+using MirDB;
 using System.Runtime.Remoting.Messaging;
 
 namespace Library.SystemModels

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -155,7 +155,7 @@ namespace Library
             if (!Directory.Exists(Path.GetDirectoryName(path)))
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
 
-            File.WriteAllLines(path, lines, Encoding.Unicode);
+            File.WriteAllLines(path, lines, new UTF8Encoding(false));
         }
 
         private static bool TryGetEntry(Type type, string section, string key, out string value)
